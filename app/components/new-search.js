@@ -13,8 +13,10 @@ export default Ember.Component.extend({
       this.set('showCommitteeButton', false);
     },
     getSubCommittees(committee) {
-      this.set('showCommitteeButton', true);
-      this.get('dataService').getSubCommittees(committee.committee_id);
+      if(!committee.subcommittee) {
+        this.set('showCommitteeButton', true);
+        this.get('dataService').getSubCommittees(committee.committee_id);
+      }
     }
   }
 });

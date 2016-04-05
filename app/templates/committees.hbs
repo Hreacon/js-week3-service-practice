@@ -1,0 +1,6 @@
+<h1>Committees:</h1>
+<ul class="committees">
+  {{#each model.results as |committee|}}
+  <li {{action 'getSubCommittees' committee}}>{{committee.name}}</li>
+  {{/each}}
+</ul>

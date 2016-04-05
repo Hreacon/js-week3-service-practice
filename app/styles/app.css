@@ -1,0 +1,5 @@
+.committees li {
+  margin:5px;
+  cursor:pointer;
+  display: block;
+}
