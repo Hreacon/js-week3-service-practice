@@ -1,0 +1,23 @@
+
+<form>
+  {{input value=zip}}
+  <button {{action 'findReps'}}>
+    Find Reps
+  </button>
+</form>
+{{#if dataService.results}}
+  {{#each dataService.results as |rep|}}
+    {{rep-card rep=rep}}
+  {{/each}}
+{{/if}}
+
+{{#if dataService.committees}}
+  {{#each dataService.committees as |committee|}}
+    <h4 {{action 'getSubCommittees' committee}}>{{committee.name}}</h4>
+  {{/each}}
+{{else}}
+  <h4>No Committees To Show. Please get Committees</h4>
+{{/if}}
+{{#if showCommitteeButton}}
+  <button {{action 'showCommittees'}}>Show Committees</button>
+{{/if}}
